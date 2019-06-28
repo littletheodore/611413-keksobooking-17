@@ -1,7 +1,7 @@
 # Личный проект «Кексобукинг» [![Build status][travis-image]][travis-url]
 
 * Студент: [Littletheodore](https://up.htmlacademy.ru/javascript/17/user/611413).
-* Наставник: `Без нас тав ника`.
+* Наставник: `Без нас тав ни ка`.
 
 ---
 
