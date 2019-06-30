@@ -118,7 +118,6 @@
   };
 
 
-
   window.map.adForm.action = 'https://js.dump.academy/keksobooking';
 
   adTitle.required = 'required';
@@ -212,7 +211,7 @@
       setPrice();
       selectReset(adRoomNumber);
       Array.prototype.forEach.call(window.map.filtersForm.children, function (element) {
-        selectReset(element)
+        selectReset(element);
       });
       window.map.activeModeOff();
       window.map.fillAdress(window.map.MAIN_PIN_START_COORDS.X, window.map.MAIN_PIN_START_COORDS.Y);
@@ -232,7 +231,6 @@
     window.map.activeModeOff();
     window.map.fillAdress(window.map.MAIN_PIN_START_COORDS.X, window.map.MAIN_PIN_START_COORDS.Y);
   });
-
 
 
 })();
