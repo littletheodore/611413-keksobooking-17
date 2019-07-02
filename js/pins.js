@@ -1,6 +1,6 @@
 'use strict';
 (function () {
-  var Icon = {
+  var icon = {
     width: 50,
     height: 70,
     halfWidth: 25,
@@ -22,7 +22,7 @@
     }
     for (var i = 0; i < pinQuantity; i++) {
       var element = pinTemplate.cloneNode(true);
-      element.style = 'left:' + (array[i].location.x - window.pins.Icon.halfWidth) + 'px; ' + 'top:' + (array[i].location.y - window.pins.Icon.halfHeight) + 'px;';
+      element.style = 'left:' + (array[i].location.x - window.pins.icon.halfWidth) + 'px; ' + 'top:' + (array[i].location.y - window.pins.icon.halfHeight) + 'px;';
       element.children[0].src = array[i].author.avatar;
       element.children[0].alt = array[i].offer.title;
       fragment.appendChild(element);
@@ -31,7 +31,7 @@
   };
   window.pins = {
     'mapIcons': mapIcons,
-    'Icon': Icon,
+    'icon': icon,
     'drawing': drawing,
   };
 })();

@@ -38,16 +38,16 @@
       }
     });
     var arrayCompare = function (firstArray, secondArray) {
-      var asd = [];
+      var comparedElements = [];
       firstArray.forEach(function (element1) {
         var sameElements = secondArray.filter(function (element2) {
           return element1 === element2;
         });
         if (sameElements.length !== 0) {
-          asd.push(sameElements);
+          comparedElements.push(sameElements);
         }
       });
-      return (asd.length === firstArray.length) ? true : false;
+      return (comparedElements.length === firstArray.length) ? true : false;
     };
 
 

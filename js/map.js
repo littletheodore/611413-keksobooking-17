@@ -24,7 +24,7 @@
   var adFormFieldsets = adForm.querySelectorAll('.ad-form>fieldset');
   var arePinsLoaded = false;
 
-  var activeModeOff = function () {
+  var setActiveModeOff = function () {
     arePinsLoaded = false;
     adFormFieldsets.forEach(function (element) {
       element.disabled = 'disabled';
@@ -51,7 +51,7 @@
     fillAdress(MAIN_PIN_START_COORDS.X, MAIN_PIN_START_COORDS.Y);
   };
 
-  var activeModeOn = function () {
+  var setActiveModeOn = function () {
     if (!(arePinsLoaded)) {
       arePinsLoaded = true;
       window.load('GET', 'https:js.dump.academy/keksobooking/data', NaN, function (hosts) {
@@ -75,7 +75,7 @@
   var fillAdress = function (iconX, iconY) {
     var adressInput = document.querySelector('#address');
     adressInput.value = Math.round(iconX) + ',' + Math.round(iconY);
-    adressInput.readonly = 'readonly';
+    adressInput.disabled = 'disabled';
   };
 
   var startCoordinates = {};
@@ -115,7 +115,7 @@
       mainPin.style.top = (mainPinTop) + 'px';
       mainPin.style.left = (mainPinLeft) + 'px';
 
-      fillAdress(parseFloat(mainPinLeft), parseFloat(mainPinTop) + window.pins.Icon.halfHeight);
+      fillAdress(parseFloat(mainPinLeft), parseFloat(mainPinTop) + window.pins.icon.halfHeight);
       mainPin.addEventListener('mouseup', onMouseUp);
     };
 
@@ -142,9 +142,9 @@
       mainPin.style.top = (mainPinTop) + 'px';
       mainPin.style.left = (mainPinLeft) + 'px';
 
-      fillAdress(parseFloat(mainPinLeft), parseFloat(mainPinTop) + window.pins.Icon.halfHeight);
+      fillAdress(parseFloat(mainPinLeft), parseFloat(mainPinTop) + window.pins.icon.halfHeight);
 
-      activeModeOn();
+      setActiveModeOn();
       document.removeEventListener('mousemove', onMouseMove);
       document.removeEventListener('mouseup', onMouseUp);
     };
@@ -162,12 +162,12 @@
     'MAIN_PIN_START_COORDS': MAIN_PIN_START_COORDS,
     'MAIN_ICON_INDEX': MAIN_ICON_INDEX,
     'PIN_QUANTITY': PIN_QUANTITY,
-    'activeModeOn': activeModeOn,
-    'activeModeOff': activeModeOff,
+    'setActiveModeOn': setActiveModeOn,
+    'setActiveModeOff': setActiveModeOff,
     'fillAdress': fillAdress,
   };
 
-  window.map.activeModeOff();
+  window.map.setActiveModeOff();
   window.map.mainPin.addEventListener('mousedown', onMouseDown);
 
 })();

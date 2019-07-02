@@ -7,7 +7,7 @@
     var xhr = new XMLHttpRequest();
     xhr.responseType = 'json';
     xhr.addEventListener('load', function () {
-      if (xhr.status === window.StatusCode.Success) {
+      if (xhr.status === window.StatusCodes.Success) {
         onSuccess(xhr.response);
       } else {
         if (method === 'GET') {
@@ -28,7 +28,7 @@
     xhr.send(data);
   };
 
-  window.StatusCode = {
+  window.StatusCodes = {
     'Success': 200,
     'Response redirection': 300,
     'Response error': 400,
